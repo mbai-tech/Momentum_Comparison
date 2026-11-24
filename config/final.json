@@ -256,7 +256,7 @@
       "eda.py": "410d24001bc96b39011c4fd87f6877f5f2f0f6c3ee59253171dc03d317a8880e",
       "strategies/ma_strategy.py": "6750842372813e0be12ca437bbeec58eb15b1a9fda77ddf328ea12b91c45695e",
       "strategies/percentile_momentum.py": "3feaf35caede3ef45daf3418c0290b877ba04f800c446aa2541e98c4dd8fcec7",
-      "strategies/pipeline.py": "a575109a36ddc0992150c4aeb5b000f34006952648b0f608bad9525790eb000b",
+      "strategies/pipeline.py": "d80d54b38553c5202f17509bfe11c5e95a650bc5512aaa3f6e5d50d661263904",
       "strategies/sector_analysis.py": "980bdbf5871511a5e3c2c9d75264afbd01f361fdd5d9f383bea454a9834ca153",
       "strategies/walk_forward.py": "e44f94146a5c1135459af7dabde60d2a4f7b37ff0170404e15018c861df34d94",
       "strategies/final_test.py": "1ae4bd12ba50e2534be8385ea99d1d6122ddc2f9f6bcb92e9df5c22da7f8eb5f"
@@ -269,7 +269,7 @@
     },
     "refrozen": {
       "date": "2026-11-23",
-      "reason": "comment-only change: docstrings removed from all scripts (# comments kept); final_test.py --help text now a literal string; '# ----' section divider lines removed (section titles kept); final_test.py --rerun help text shortened; 'Phase' references removed from comments; compare_families.py output renamed phase5_comparison.csv -> comparison.csv and printed heading reworded (results unchanged)"
+      "reason": "comment-only change: docstrings removed from all scripts (# comments kept); final_test.py --help text now a literal string; '# ----' section divider lines removed (section titles kept); final_test.py --rerun help text shortened; 'Phase' references removed from comments; compare_families.py output renamed phase5_comparison.csv -> comparison.csv and printed heading reworded (results unchanged); project folder flattened (moving_avg/ removed), pipeline.py comment updated"
     }
   }
 }

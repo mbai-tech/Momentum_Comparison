@@ -6,7 +6,7 @@ import pandas as pd
 import requests
 
 from pathlib import Path
-ROOT = Path(__file__).resolve().parent.parent   # moving_avg/ (this file is in strategies/)
+ROOT = Path(__file__).resolve().parent.parent   # project folder (this file is in strategies/)
 RAW_DIR = ROOT / "data" / "raw"                    # cached downloads (prices, volume, SPY, sectors)
 QUALITY_DIR = ROOT / "results" / "data_quality"   # data-cleaning checklist outputs
 
