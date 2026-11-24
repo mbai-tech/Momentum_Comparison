@@ -1,10 +1,10 @@
-# Moving-average and momentum strategies on the S&P 500
+### Moving-average and momentum strategies
 
 Long-short backtests of two strategy families on current S&P 500 stocks: an MA crossover (baseline 50/200 days, daily) and cross-sectional momentum (baseline 12-1 months, monthly, top/bottom 20%). Both are 100/100 long/short, equal weight, at least 20 names per side, with trading and borrow costs.
 
 Samples: development 2006-2014, validation 2015-2019, test 2020-2025.
 
-## Setup
+### Setup
 
 ```bash
 pip install pandas numpy matplotlib requests lxml yfinance
@@ -12,7 +12,7 @@ pip install pandas numpy matplotlib requests lxml yfinance
 
 Run commands from this folder. Internet is only needed if `data/raw/` is missing.
 
-## Run
+### Run
 
 Build the dataset (only when the raw data or cleaning rules change; each build gets a new version in `data/`, and scripts use the newest):
 
@@ -34,7 +34,7 @@ python3 strategies/walk_forward.py          # validation, 2015-2019
 
 After a rebuild, run `ma_strategy.py` and `percentile_momentum.py` first; later scripts check against their results.
 
-## Final test
+### Final test
 
 ```bash
 python3 strategies/final_test.py
