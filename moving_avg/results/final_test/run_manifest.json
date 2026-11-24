@@ -1,0 +1,10 @@
+{
+  "run_at": "2026-11-23T15:45:00",
+  "config_sha256": "693d32f75c0ce3b15a4275cd11233adbdcefcce0528abd298618fb19a4f02829",
+  "frozen_files_verified": 11,
+  "test_period": [
+    "2020-01-01",
+    "2025-12-31"
+  ],
+  "rerun": false
+}

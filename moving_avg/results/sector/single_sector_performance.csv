@@ -1,0 +1,12 @@
+sector,avg_eligible,max_names_per_side,share_of_months_tradeable,status
+Communication Services,11.027777777777779,3,0.0,too small (< 20 names per side)
+Consumer Discretionary,38.092592592592595,8,0.0,too small (< 20 names per side)
+Consumer Staples,28.25,6,0.0,too small (< 20 names per side)
+Energy,14.87037037037037,3,0.0,too small (< 20 names per side)
+Financials,61.03703703703704,13,0.0,too small (< 20 names per side)
+Health Care,48.06481481481482,11,0.0,too small (< 20 names per side)
+Industrials,59.51851851851852,13,0.0,too small (< 20 names per side)
+Information Technology,49.69444444444444,12,0.0,too small (< 20 names per side)
+Materials,19.01851851851852,4,0.0,too small (< 20 names per side)
+Real Estate,24.675925925925927,5,0.0,too small (< 20 names per side)
+Utilities,27.02777777777778,5,0.0,too small (< 20 names per side)

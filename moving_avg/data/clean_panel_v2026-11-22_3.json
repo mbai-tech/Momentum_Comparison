@@ -1,0 +1,37 @@
+{
+  "version": "2026-11-22_3",
+  "built_on": "2026-11-22T23:04:43",
+  "raw_files_saved_on": {
+    "prices.pkl": "2026-11-22",
+    "volume.pkl": "2026-11-22",
+    "spy.pkl": "2026-11-22",
+    "sectors.csv": "2026-11-22"
+  },
+  "source": "Yahoo Finance via yfinance (auto_adjust=False, actions=True: Adj Close, Close, Stock Splits, Volume); universe and sectors from Wikipedia 'List of S&P 500 companies' (current list)",
+  "requested_sample": [
+    "2005-01-01",
+    "2025-12-31"
+  ],
+  "first_date": "2005-01-03",
+  "last_date": "2025-12-30",
+  "n_trading_days": 5282,
+  "n_tickers_with_data": 497,
+  "n_rows": 2382614,
+  "rules": {
+    "min_history_days": 252,
+    "min_price": 5.0,
+    "min_adv20_dollar": 10000000.0,
+    "adv_window": 20,
+    "price_filter_uses": "raw_close (actually traded price), not adj_close",
+    "duplicate_share_classes_dropped": {
+      "GOOG": "GOOGL",
+      "FOX": "FOXA",
+      "NWS": "NWSA"
+    },
+    "universe": "current S&P 500 list (not point-in-time)",
+    "missing_prices": "not filled",
+    "risk_free": "not used",
+    "invalid_returns": "E009: return set to NaN where |adj return| > 20% and the adj return and raw-close return have opposite signs (mis-adjusted corporate action)"
+  },
+  "n_invalid_returns_E009": 3
+}

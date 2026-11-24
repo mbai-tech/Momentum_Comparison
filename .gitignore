@@ -1,0 +1,5 @@
+__pycache__/
+.DS_Store
+moving_avg/data/*.pkl
+moving_avg/data/raw/*.pkl
+moving_avg/results/trade_log/*.csv.gz

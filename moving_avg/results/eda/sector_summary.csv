@@ -1,0 +1,12 @@
+sector,avg_eligible_stocks,first_month,last_month,avg_dollar_volume_share
+Communication Services,14.071,8,19,0.083
+Consumer Discretionary,42.154,31,47,0.142
+Consumer Staples,30.402,24,32,0.056
+Energy,17.739,13,21,0.051
+Financials,68.232,48,76,0.145
+Health Care,53.755,42,60,0.105
+Industrials,68.544,46,81,0.1
+Information Technology,61.473,44,74,0.247
+Materials,20.822,15,24,0.028
+Real Estate,27.502,10,30,0.02
+Utilities,28.863,20,31,0.024

@@ -1,0 +1,19 @@
+check,result
+duplicate_dates_removed,0
+duplicate_share_classes_removed,"GOOG, FOX, NWS"
+tickers_with_no_data,"FDXF, HONA, VYLR"
+tickers_with_data,497
+first_date,2005-01-03
+last_date,2025-12-30
+zero_or_negative_prices_removed,0
+negative_volume_removed,0
+returns_beyond_50%_flagged,33
+spike_then_reversal_flagged,0
+stale_runs_of_5plus_days_flagged,527
+known_splits_checked,6
+known_splits_adjusted_ok,6
+missing_prices_inside_history,0
+gap_rule,no filling; stock ineligible until its rolling windows refill
+full_lookback_required,yes (rolling windows need complete data; 252-day history)
+winsorizing,off (extremes flagged and counted above)
+benchmark_dates_missing_vs_stocks,0

@@ -1,0 +1,275 @@
+{
+  "created": "2026-11-23",
+  "dataset_version": "2026-11-23",
+  "selection_rule": "Highest median net Sharpe (base costs) across the yearly blocks 2015-2019, provided neighbouring settings are similar and no single year dominates; ties go to the baseline. Here the highest-median setting is the baseline in both families, so the choice does not depend on how the two checks are scored.",
+  "families": {
+    "MA": {
+      "final_setting": "MA (50,200)",
+      "parameters": {
+        "short": 50,
+        "long": 200
+      },
+      "is_baseline": true,
+      "median_block_sharpe": {
+        "MA (20,100)": -0.456,
+        "MA (50,200)": 0.131,
+        "MA (100,250)": -0.611
+      },
+      "block_sharpe": {
+        "MA (20,100)": {
+          "2015": -0.036,
+          "2016": -1.206,
+          "2017": -0.456,
+          "2018": -0.086,
+          "2019": -2.129
+        },
+        "MA (50,200)": {
+          "2015": 0.131,
+          "2016": -1.176,
+          "2017": 0.175,
+          "2018": 0.324,
+          "2019": -1.119
+        },
+        "MA (100,250)": {
+          "2015": 0.653,
+          "2016": -1.218,
+          "2017": -0.611,
+          "2018": 0.669,
+          "2019": -0.721
+        }
+      },
+      "check_neighbours": {
+        "neighbour_median_sharpe": {
+          "MA (20,100)": -0.456,
+          "MA (100,250)": -0.611
+        }
+      },
+      "check_single_year": {
+        "best_setting_when_dropping_year": {
+          "2015": "MA (50,200)",
+          "2016": "MA (50,200)",
+          "2017": "MA (100,250)",
+          "2018": "MA (50,200)",
+          "2019": "MA (50,200)"
+        }
+      },
+      "chained_out_of_sample_2015_2019": {
+        "ann_return": -0.0393,
+        "sharpe_net": -0.4392,
+        "max_drawdown": -0.2516
+      }
+    },
+    "Momentum": {
+      "final_setting": "12-1",
+      "parameters": {
+        "lookback_days": 252,
+        "skip_days": 21
+      },
+      "is_baseline": true,
+      "median_block_sharpe": {
+        "6-1": 0.123,
+        "9-1": 0.2,
+        "12-1": 0.329
+      },
+      "block_sharpe": {
+        "6-1": {
+          "2015": 0.723,
+          "2016": -0.693,
+          "2017": 0.123,
+          "2018": 0.945,
+          "2019": -0.823
+        },
+        "9-1": {
+          "2015": 1.599,
+          "2016": -1.215,
+          "2017": 0.2,
+          "2018": 0.904,
+          "2019": -0.458
+        },
+        "12-1": {
+          "2015": 1.526,
+          "2016": -1.661,
+          "2017": 0.329,
+          "2018": 0.623,
+          "2019": -0.395
+        }
+      },
+      "check_neighbours": {
+        "neighbour_median_sharpe": {
+          "9-1": 0.2
+        }
+      },
+      "check_single_year": {
+        "best_setting_when_dropping_year": {
+          "2015": "12-1",
+          "2016": "9-1",
+          "2017": "9-1",
+          "2018": "12-1",
+          "2019": "9-1"
+        }
+      },
+      "chained_out_of_sample_2015_2019": {
+        "ann_return": -0.0065,
+        "sharpe_net": 0.0187,
+        "max_drawdown": -0.3
+      }
+    }
+  },
+  "frozen": {
+    "frozen_on": "2026-11-23",
+    "note": "Settings the final test will use, read from the current scripts. Items marked NOT FOUND are not defined in any script and must be specified before the test.",
+    "final_settings": {
+      "MA": {
+        "short": 50,
+        "long": 200
+      },
+      "Momentum": {
+        "lookback_days": 252,
+        "skip_days": 21
+      }
+    },
+    "periods": {
+      "test": {
+        "start": "2020-01-01",
+        "end": "2025-12-31",
+        "source": "user instruction; read by strategies/final_test.py from this file",
+        "last_date_in_data": "2025-12-30"
+      },
+      "development": [
+        "2006-01-01",
+        "2014-12-31"
+      ],
+      "validation": [
+        "2015-01-01",
+        "2019-12-31"
+      ],
+      "data_download": [
+        "2005-01-01",
+        "2025-12-31"
+      ]
+    },
+    "data": {
+      "dataset_version": "2026-11-23",
+      "source": "Yahoo Finance via yfinance (auto_adjust=False, actions=True: Adj Close, Close, Stock Splits, Volume); universe and sectors from Wikipedia 'List of S&P 500 companies' (current list)",
+      "sha256": {
+        "data/clean_panel_v2026-11-23.pkl": "8addf62bffafcaa899ae5c62330049af7d960ff2a23656a398c0eff843662312",
+        "data/benchmark_v2026-11-23.pkl": "2bafe440f02e0af157b23bcae4a7270a204e49670a0abcf57a4e9ac0192ddf56"
+      }
+    },
+    "universe_and_eligibility": {
+      "universe": "current S&P 500 list from Wikipedia (not point-in-time; survivorship bias, planned experiment E006)",
+      "duplicate_share_classes_dropped": {
+        "GOOG": "GOOGL",
+        "FOX": "FOXA",
+        "NWS": "NWSA"
+      },
+      "min_history_days": 252,
+      "min_raw_close_price": 5.0,
+      "min_adv20_dollar_volume": 10000000.0,
+      "adv_window_days": 20,
+      "price_filter_uses": "raw_close (actually traded price)",
+      "missing_prices": "not filled; stock ineligible until rolling windows refill",
+      "sectors": "current GICS sector from Wikipedia (not point-in-time)"
+    },
+    "data_corrections": {
+      "E004": "APPLIED in build_dataset.py via pipeline.clean_data(): spec 3.4 cleaning checklist (duplicate dates removed, zero/negative prices removed, extreme moves beyond +/-50% and stale-price runs of 5+ days flagged, not changed) and one share class per company (keep Class A: GOOGL, FOXA, NWSA; drop GOOG, FOX, NWS)",
+      "E007": "APPLIED in build_dataset.py: the $5 price filter uses raw_close (Yahoo Close with later splits undone, the actually traded price), not the split-adjusted price, to avoid look-ahead bias",
+      "E009": "adjusted return set to NaN where |adj return| > 20% and adj and raw-close returns have opposite signs",
+      "E010": "E009-flagged return restored if Yahoo records a split that day and raw_close/adj_close changes by the split factor within 2%; signals use signal_close (invalid returns counted as 0%)",
+      "winsorising": "off (extremes beyond +/-50% flagged, not changed)"
+    },
+    "signals": {
+      "prices_for_signals": "signal_close",
+      "prices_for_returns": "adj_close daily returns (invalid = NaN, treated as 0 in backtest)",
+      "eligibility_uses": "raw_close, adv20, history"
+    },
+    "execution_lag": "signal at close of day t -> traded at close of t+1 (cost charged then) -> earns returns from t+2 (backtest: w = target.shift(1), held = w.shift(1))",
+    "rebalancing": {
+      "MA": "daily (target recomputed every day)",
+      "Momentum": "monthly, on the last available trading day of each month; weights held until next rebalance"
+    },
+    "momentum_tails": {
+      "long": "percentile >= 0.80",
+      "short": "percentile <= 0.20",
+      "ranking": "eligible stocks only, method='first' (ties broken alphabetically), pct=True",
+      "top": 0.8,
+      "bottom": 0.2
+    },
+    "ma_rule": "long if 50-day mean > 200-day mean of signal_close, short if below; eligible stocks only",
+    "weights": "equal weight within each side; 100% gross long and 100% gross short",
+    "min_names_per_side": {
+      "value": 20,
+      "rule": "a side with fewer names goes to cash (other side unaffected)"
+    },
+    "cost_scenarios": {
+      "frictionless": {
+        "trading_bps": 0,
+        "borrow_bps_per_year": 0
+      },
+      "low": {
+        "trading_bps": 5,
+        "borrow_bps_per_year": 25
+      },
+      "base": {
+        "trading_bps": 10,
+        "borrow_bps_per_year": 50
+      },
+      "stress": {
+        "trading_bps": 20,
+        "borrow_bps_per_year": 200
+      },
+      "model": "trading cost = bps x sum |change in weights| on the trade day; borrow = bps/yr / 252 x short gross, daily"
+    },
+    "benchmark": {
+      "ticker": "SPY",
+      "prices": "auto-adjusted close (dividends included)"
+    },
+    "bootstrap": {
+      "method": "moving-block bootstrap of daily net returns",
+      "statistic": "annualised Sharpe ratio (mean / std x sqrt(252))",
+      "block_length_days": 21,
+      "resamples": 2000,
+      "seed": 0,
+      "interval_percentiles": [
+        0.025,
+        0.975
+      ],
+      "applied_to": "every strategy x cost scenario, and the benchmark, over the test period"
+    },
+    "plot_style": {
+      "backend": "Agg",
+      "style_sheet": "matplotlib default (no style or rcParams set)",
+      "dpi": 150,
+      "layout": "fig.tight_layout()",
+      "sector_colormap": "tab20 (11-sector charts)",
+      "figure_sizes": "set per chart in each script"
+    },
+    "software": {
+      "python": "3.14.6",
+      "pandas": "3.1.1",
+      "numpy": "2.5.4",
+      "matplotlib": "3.11.2"
+    },
+    "sha256_py": {
+      "build_dataset.py": "81a4adc7cb6b1dcd1f88d21f7d2661b4119a5446f5c4f6cc7a71cb194b064a35",
+      "compare_families.py": "cdaa0f9a9754d9fb4fdcc798676255c49636c7da0176f31b6fd834603a34d8e1",
+      "eda.py": "410d24001bc96b39011c4fd87f6877f5f2f0f6c3ee59253171dc03d317a8880e",
+      "strategies/ma_strategy.py": "6750842372813e0be12ca437bbeec58eb15b1a9fda77ddf328ea12b91c45695e",
+      "strategies/percentile_momentum.py": "3feaf35caede3ef45daf3418c0290b877ba04f800c446aa2541e98c4dd8fcec7",
+      "strategies/pipeline.py": "a575109a36ddc0992150c4aeb5b000f34006952648b0f608bad9525790eb000b",
+      "strategies/sector_analysis.py": "980bdbf5871511a5e3c2c9d75264afbd01f361fdd5d9f383bea454a9834ca153",
+      "strategies/walk_forward.py": "e44f94146a5c1135459af7dabde60d2a4f7b37ff0170404e15018c861df34d94",
+      "strategies/final_test.py": "1ae4bd12ba50e2534be8385ea99d1d6122ddc2f9f6bcb92e9df5c22da7f8eb5f"
+    },
+    "final_test": {
+      "script": "strategies/final_test.py",
+      "output_dir": "results/final_test",
+      "reads": "config/final.json only (settings); frozen pipeline.py and build_dataset.py (code); dataset version above",
+      "safeguards": "stops if any frozen .py or dataset checksum differs; stops if results/final_test exists unless --rerun"
+    },
+    "refrozen": {
+      "date": "2026-11-23",
+      "reason": "comment-only change: docstrings removed from all scripts (# comments kept); final_test.py --help text now a literal string; '# ----' section divider lines removed (section titles kept); final_test.py --rerun help text shortened; 'Phase' references removed from comments; compare_families.py output renamed phase5_comparison.csv -> comparison.csv and printed heading reworded (results unchanged)"
+    }
+  }
+}
